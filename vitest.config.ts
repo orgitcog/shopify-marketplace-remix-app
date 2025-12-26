@@ -7,17 +7,24 @@ export default defineConfig({
     globals: true,
     environment: "node",
     setupFiles: ["./app/test/setup.ts"],
-    include: ["app/**/*.{test,spec}.{ts,tsx}"],
+    include: ["test/**/*.{test,spec}.{ts,tsx}", "app/**/*.{test,spec}.{ts,tsx}"],
+    exclude: ["node_modules", "build", ".cache", "dist"],
     coverage: {
       provider: "v8",
       reporter: ["text", "json", "html"],
       exclude: [
         "node_modules/",
         "app/test/",
+        "test/",
         "**/*.d.ts",
         "**/*.config.*",
         "**/mockData.ts",
       ],
+    },
+  },
+  resolve: {
+    alias: {
+      "~": "/app",
     },
   },
 });

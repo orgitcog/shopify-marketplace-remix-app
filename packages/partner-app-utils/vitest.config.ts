@@ -6,6 +6,7 @@ export default defineConfig({
     environment: "node",
     setupFiles: ["./src/test/setup.ts"],
     include: ["src/**/*.{test,spec}.ts"],
+    exclude: ["node_modules"],
     coverage: {
       provider: "v8",
       reporter: ["text", "json", "html"],
@@ -16,5 +17,14 @@ export default defineConfig({
         "dist/",
       ],
     },
+  },
+  ssr: {
+    noExternal: true,
+  },
+  resolve: {
+    conditions: ["node"],
+  },
+  esbuild: {
+    target: "node18",
   },
 });
