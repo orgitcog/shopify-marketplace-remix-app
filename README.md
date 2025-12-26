@@ -6,6 +6,36 @@ Rather than cloning this repo, you can use your preferred package manager and th
 
 Visit the [`shopify.dev` documentation](https://shopify.dev/docs/api/shopify-app-remix) for more details on the Remix app package.
 
+## Testing & CI/CD
+
+This repository includes comprehensive testing and CI/CD infrastructure:
+
+- **Unit Tests**: Vitest for main app and shared packages
+- **Integration Tests**: Jest for admin app (legacy)
+- **E2E Tests**: Playwright framework (expandable)
+- **CI/CD Pipeline**: Automated linting, building, testing, and Docker builds
+
+📚 **[See detailed testing documentation](./TESTING.md)**
+
+### Running Tests
+
+```shell
+# Run all unit tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run all tests (main app + packages)
+npm run test:all
+
+# Run E2E tests
+npm run test:e2e
+```
+
 ## Quick start
 
 ### Prerequisites

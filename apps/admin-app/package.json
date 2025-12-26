@@ -11,7 +11,7 @@
     "test": "NODE_ENV=test jest"
   },
   "engines": {
-    "node": "^16.13.1"
+    "node": "^16.13.1 || ^18.0.0 || ^20.0.0 || ^22.0.0"
   },
   "resolutions": {
     "node-gyp": "9.0.0"
