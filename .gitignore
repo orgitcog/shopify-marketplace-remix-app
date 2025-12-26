@@ -23,3 +23,23 @@ pnpm-lock.yaml
 # Ignore shopify files created during app dev
 .shopify/*
 .shopify.lock
+
+# Test coverage
+coverage/
+*.lcov
+.nyc_output
+
+# Test artifacts
+test.db
+test.db-journal
+*.test.sqlite
+*.test.sqlite-journal
+
+# Playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
+# Build artifacts
+marketplace-app.tar.gz
+*.tgz
