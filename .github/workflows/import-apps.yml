@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout Monorepo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v6.0.1
         with:
           fetch-depth: 0
 
