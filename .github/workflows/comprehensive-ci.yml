@@ -80,7 +80,7 @@ jobs:
         run: cd apps/buyer-app && npm ci && npm run build
 
       - name: Upload build artifacts - main app
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: main-app-build-node-${{ matrix.node-version }}
           path: |
@@ -89,14 +89,14 @@ jobs:
           retention-days: 7
 
       - name: Upload build artifacts - admin app
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: admin-app-build-node-${{ matrix.node-version }}
           path: apps/admin-app/app/public/build/
           retention-days: 7
 
       - name: Upload build artifacts - market app
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: market-app-build-node-${{ matrix.node-version }}
           path: apps/market-app/build/
@@ -104,7 +104,7 @@ jobs:
           if-no-files-found: warn
 
       - name: Upload build artifacts - buyer app
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: buyer-app-build-node-${{ matrix.node-version }}
           path: apps/buyer-app/.next/
@@ -142,7 +142,7 @@ jobs:
         continue-on-error: true
 
       - name: Upload coverage reports
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         if: matrix.node-version == 20
         with:
           name: coverage-reports
@@ -208,7 +208,7 @@ jobs:
         run: docker save shopify-marketplace-app:${{ github.sha }} | gzip > marketplace-app.tar.gz
 
       - name: Upload Docker image artifact
-        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882 # v4.4.3
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: docker-image
           path: marketplace-app.tar.gz
